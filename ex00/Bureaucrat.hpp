@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 06:09:52 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/10 07:03:35 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/10 07:20:12 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ public:
 	Bureaucrat(Bureaucrat const & src);
 
 	Bureaucrat & operator=(Bureaucrat const & src);
-	std::string getName(void);
-	int	getGrade(void);
+	std::string const getName(void) const;
+	int	getGrade(void) const;
 	void gradeIncrement(void);
 	void gradeDecrement(void);
 
