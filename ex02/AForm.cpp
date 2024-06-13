@@ -12,7 +12,7 @@
 
 #include "AForm.hpp"
 
-AForm::~AForm() { std::cout << "Form " << name << " left"; }
+AForm::~AForm() { }
 AForm::AForm() : name("Default"), isSigned(false), g_sign(1), g_exe(1) {}
 
 AForm::AForm(std::string _name, int _g_sign, int _g_exe)
@@ -36,6 +36,7 @@ bool AForm::checkIsSigned(void) const { return isSigned; }
 int	AForm::getGradeToSign() const {return g_sign; }
 int AForm::getGradeToExecute() const {return g_exe; }
 
+AForm::GradeTooLowException::~GradeTooLowException() throw() {}
 AForm::GradeTooLowException::GradeTooLowException(std::string AFormName, int g_exe) throw()
 	: name(AFormName), g_exe(g_exe) {}
 const char *AForm::GradeTooLowException::what() const throw()
@@ -46,10 +47,13 @@ const char *AForm::GradeTooLowException::what() const throw()
 	return (a.c_str());
 }
 
+AForm::UnSigned::~UnSigned() throw() {}
 AForm::UnSigned::UnSigned(std::string AFormName) throw() : name(AFormName) {}
 const char *AForm::UnSigned::what() const throw()
 {
-	std::string static a = "This " + name + " is not signed yet";
+	std::string static a;
+
+	a = "This " + name + " is not signed yet";
 	return (a.c_str());
 }
 

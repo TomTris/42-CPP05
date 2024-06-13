@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:41:00 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 09:02:32 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/13 09:24:02 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::cout << "RobotomyRequestForm with the target `" << target << "' left";
+	std::cout << "RobotomyRequestForm with the target `" << target << "' left"  << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm() : AForm("Default", 72, 45)
 {
-	std::cout << "RobotomyRequestForm with the target `" << target << " is born";
+	std::cout << "RobotomyRequestForm with the target `" << target << " is born"  << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string _name)

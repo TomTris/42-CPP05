@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:41:02 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 09:04:28 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/13 09:27:35 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,13 @@
 
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
-	std::cout << "ShrubberyCreationForm with the target `" << target << "' left";
+	std::cout << "ShrubberyCreationForm with the target `" << target << "' left" << std::endl;
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("Default", 145, 137)
+ShrubberyCreationForm::ShrubberyCreationForm()
+	: AForm("Default", 145, 137)
 {
-	std::cout << "ShrubberyCreationForm with the target `" << target << " is born";
+	std::cout << "ShrubberyCreationForm with the target `" << target << " is born" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string _name)
@@ -45,7 +46,7 @@ ShrubberyCreationForm & ShrubberyCreationForm::operator=(ShrubberyCreationForm c
 	return (*this);
 }
 
-void		ShrubberyCreationForm::execute(Bureaucrat const & executor)  const
+void	ShrubberyCreationForm::execute(Bureaucrat const & executor)  const
 {
 	if (checkIsSigned() == false)
 		throw UnSigned(AForm::getName());
@@ -57,7 +58,7 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor)  const
 		std::cerr << "Target file `" << target + "_shrubbery" << " can't be opened" << std::endl;
 	else
 	{
-		std::cout << "          v .   ._, |_  ., \
+		o_file << "          v .   ._, |_  ., \
            `-._\\/  .  \\ /    |/_ \
                \\\\  _\\, y | \\// \
          _\\_.___\\, \\/ -.\\|| \
@@ -69,5 +70,6 @@ void		ShrubberyCreationForm::execute(Bureaucrat const & executor)  const
                      |   =| \
                      |    | \
 --------------------/ ,  . \\--------._" << std::endl;
+		o_file.close();
 	}
 }

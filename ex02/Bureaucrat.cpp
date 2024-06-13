@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 07:03:38 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 08:39:29 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/13 09:28:20 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void Bureaucrat::executeForm(AForm const & form)
 	try
 	{
 		form.execute(*this);
-		std::cout << name << " executed " << form.getName();
+		std::cout << name << " executed " << form.getName() << std::endl;
 	}
 	catch (std::exception &e)
 	{

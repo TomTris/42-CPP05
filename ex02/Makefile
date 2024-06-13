@@ -15,9 +15,9 @@ $(NAME): $(OBJS)
 	c++ $(CXXFLAGS) -o $(NAME) $(OBJS)
 	@echo "\033[34m'$(NAME)'\033[0m is ready to execute!"
 clean :
-	rm -f $(OBJS)
+	rm -f $(OBJS) *_shrubbery
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(NAME) *_shrubbery
 
 re: fclean all

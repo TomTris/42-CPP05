@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 13:30:46 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 09:04:42 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/13 09:21:47 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,12 @@ public:
 			const char *what() const throw();
 	};
 
-	virtual std::string const getName() const;
-	virtual bool 	checkIsSigned() const = 0;
-	virtual int 	getGradeToSign() const;
-	virtual int		getGradeToExecute() const;
-	virtual void	beSigned();
-	virtual	void 	execute(Bureaucrat const & executor) const;
+	std::string const getName() const;
+	bool 	checkIsSigned() const;
+	int 	getGradeToSign() const;
+	int		getGradeToExecute() const;
+	void	beSigned();
+	virtual	void 	execute(Bureaucrat const & executor) const = 0;
 };
 
 std::ostream & operator<<(std::ostream &o, AForm const &src);

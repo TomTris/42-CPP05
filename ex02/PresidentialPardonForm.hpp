@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:40:59 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 09:08:20 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/13 09:35:17 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AForm.hpp"
 
-class PresidentialPardonForm : virtual public AForm {
+class PresidentialPardonForm : public AForm {
 
 private:
 	std::string target;
