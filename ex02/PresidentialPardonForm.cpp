@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:40:58 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 09:03:02 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/13 09:23:34 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 PresidentialPardonForm::~PresidentialPardonForm()
 {
-	std::cout << "PresidentialPardonForm with the target `" << target << "' left";
+	std::cout << "PresidentialPardonForm with the target `" << target << "' left"  << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("Default", 25, 5)
 {
-	std::cout << "PresidentialPardonForm with the target `" << target << " is born";
+	std::cout << "PresidentialPardonForm with the target `" << target << " is born"  << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string _name)

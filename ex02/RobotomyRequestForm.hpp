@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:41:01 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 09:08:20 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/13 09:35:20 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "AForm.hpp"
 
-class RobotomyRequestForm : virtual public AForm {
+class RobotomyRequestForm : public AForm {
 
 private:
 	std::string target;
