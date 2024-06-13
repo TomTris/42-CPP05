@@ -6,7 +6,7 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/13 09:40:19 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 10:48:15 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/13 10:54:56 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ Intern::~Intern()
 
 Intern::Intern()
 {
-	std::cout << "An new unexperienced Intern came" << std::endl;
+	std::cout << "A new unexperienced Intern came" << std::endl;
 }
 
 Intern::Intern(Intern const & src)
 {
 	(void) src;
-	std::cout << "An new unexperienced Intern came with same hope of another Intern" << std::endl;
+	std::cout << "A new unexperienced Intern came with same hope of another Intern" << std::endl;
 }
 
 Intern & Intern::operator=(Intern const & src)
