@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include <sstream>
 
 AForm::~AForm() { }
 AForm::AForm() : name("Default"), isSigned(false), g_sign(1), g_exe(1) {}
@@ -42,8 +43,10 @@ AForm::GradeTooLowException::GradeTooLowException(std::string AFormName, int g_e
 const char *AForm::GradeTooLowException::what() const throw()
 {
 	static std::string a;
-
-	a = "The Grade is too low, it must be at least " + std::to_string(g_exe) + " to execute " + name;
+	std::stringstream ss;
+	ss << g_exe;
+	std::string b = ss.str();
+	a = "The Grade is too low, it must be at least " + b + " to execute " + name;
 	return (a.c_str());
 }
 

@@ -6,11 +6,12 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 09:43:11 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 09:42:58 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/15 15:55:28 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include <sstream>
 
 Form::~Form() { }
 Form::Form() : name("Default"), isSigned(false), g_sign(1), g_exe(1) {}
@@ -42,8 +43,10 @@ Form::GradeTooLowException::GradeTooLowException(std::string FormName, int g_exe
 const char *Form::GradeTooLowException::what() const throw()
 {
 	static std::string a;
-
-	a = "The Grade is too low, it must be at least " + std::to_string(g_exe) + " to execute " + name;
+	std::stringstream ss;
+	ss << g_exe;
+	std::string b = ss.str();
+	a = "The Grade is too low, it must be at least " + b + " to execute " + name;
 	return (a.c_str());
 }
 

@@ -6,12 +6,13 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:41:02 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 10:53:00 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/15 16:29:30 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-
+#include <fstream>
+#include <string>
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "ShrubberyCreationForm with the target `" << target << "' left" << std::endl;
@@ -52,10 +53,11 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor)  const
 		throw UnSigned(AForm::getName());
 	if (executor.getGrade() > getGradeToExecute())
 		throw GradeTooLowException(AForm::getName(), AForm::getGradeToExecute());
-	
-	std::ofstream o_file(target + "_shrubbery");
+	std::string temp;
+	temp = target + "_shrubbery";
+	std::ofstream o_file(temp.c_str(), std::ios::trunc);
 	if (o_file.is_open() == 0)
-		std::cerr << "Target file `" << target + "_shrubbery" << " can't be opened" << std::endl;
+		std::cerr << "Target file `" << temp.c_str() << " can't be opened" << std::endl;
 	else
 	{
 		o_file << "          v .   ._, |_  ., \n           `-._\\/  .  \\ /    |/_ \n               \\\\  _\\, y | \\// \n         _\\_.___\\, \\/ -.\\|| \n           `7-,--.`._||  / / , \n           /'     `-. `./ / |/_.' \n                     |    |// \n                     |_    / \n                     |-   | \n                     |   =| \n                     |    | \n--------------------/ ,  . \\--------._" << std::endl;
