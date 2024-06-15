@@ -6,11 +6,12 @@
 /*   By: qdo <qdo@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 10:41:00 by qdo               #+#    #+#             */
-/*   Updated: 2024/06/13 09:42:58 by qdo              ###   ########.fr       */
+/*   Updated: 2024/06/15 16:27:04 by qdo              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {
@@ -52,8 +53,7 @@ void RobotomyRequestForm::execute(Bureaucrat const & executor)  const
 	if (executor.getGrade() > getGradeToExecute())
 		throw GradeTooLowException(Form::getName(), Form::getGradeToExecute());
 	std::cout << "zhzhzhzhzhzhzhzhzhzhzh" << std::endl;
-	std::srand(std::time(nullptr));
-    int random_value = std::rand() % 2;
+    int random_value = rand() % 2;
 	if (random_value == 1)
 		std::cout << "The Robotomy failed" << std::endl;
 	else
